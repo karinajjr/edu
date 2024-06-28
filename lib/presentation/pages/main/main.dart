@@ -35,6 +35,7 @@ class _MainScreenState extends State<MainScreen> {
             InkWell(
                 onTap: (){
                   MySharedPref.unRegisterUser();
+                  Navigator.pushReplacementNamed(context, 'login');
                 },
                 child: Icon(Icons.logout))
           ],
