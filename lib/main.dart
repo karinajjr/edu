@@ -1,6 +1,4 @@
-import 'package:demo/presentation/pages/auth/login_page.dart';
-import 'package:demo/presentation/pages/main/main.dart';
-import 'package:demo/presentation/pages/splash_page/splash.dart';
+import 'package:demo/presentation/pages/auth/WelcomeScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'domain/local/shared/mypref.dart';
@@ -23,18 +21,32 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Education App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
+        fontFamily: 'Poppins',
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+          ),
+          bodyLarge: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ),
+          bodyMedium: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+          ),
+          displayMedium: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 18,
+            color: Colors.black,
+          ),
+        ),
       ),
-      initialRoute: '/',
-      routes: {
-        '/' : (BuildContext context) => const SplashScreen(),
-        'login': (BuildContext context) => const LoginScreen(),
-
-        'main' : (BuildContext context) => const MainScreen(),
-      },
+      home: const WelcomeScreen(),
     );
   }
 }
